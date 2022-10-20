@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+
+html{
+    height: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+img{
+    display: block;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.start-box {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ol-list {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background-color: teal;
+}
+
+.start-title {
+    font-size: 48px;
+    margin-bottom: 25px;
+}
+
+.contact-inp {
+    width: 300px;
+    padding: 5px 20px;
+}
+
+.btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: white;
+}
+
+.item {
+    width: 850px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.item-box {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.btn-remove {
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: white;
+    margin-right: 25px;
+}
+
+.item-text {
+    display: inline-block;
+    width: 500px;
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    margin-right: auto;
+    overflow: hidden;
+    text-align: left;
+}
+
+.item-check {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+}
