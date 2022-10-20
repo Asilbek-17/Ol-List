@@ -59,6 +59,7 @@ body{
     border-radius: 5px;
     background-color: steelblue;
     color: white;
+    cursor: pointer;
 }
 
 .item {
@@ -83,6 +84,7 @@ body{
     background-color: steelblue;
     color: white;
     margin-right: 25px;
+    cursor: pointer;
 }
 
 .item-text {
