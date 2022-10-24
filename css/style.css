@@ -62,10 +62,12 @@ body{
     cursor: pointer;
 }
 
+
 .item {
     width: 850px;
     padding-top: 10px;
     padding-bottom: 10px;
+    text-align: center;
 }
 
 .item-box {
@@ -75,10 +77,22 @@ body{
     overflow: hidden;
 }
 
-.btn-remove {
+.btn-del {
     display: inline-block;
     width: 80px;
-    height: 20px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: white;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    display: inline-block;
+    width: 80px;
+    height: 25px;
     border: none;
     border-radius: 5px;
     background-color: steelblue;
@@ -98,7 +112,7 @@ body{
     text-align: left;
 }
 
-.item-check {
+.input-checkbox {
     width: 20px;
     height: 20px;
     margin: 0;
