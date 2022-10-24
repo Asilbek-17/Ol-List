@@ -21,7 +21,7 @@ elForm.addEventListener("submit", function(evt){
         const newItem = document.createElement("li");
         const newBox = document.createElement("div")
         const newLabel = document.createElement("label");
-        const newInput = document.createElement("input");
+        const newInputChec = document.createElement("input");
         const newText = document.createElement("p");
         const newBtn = document.createElement("button");
         const newBtnEdit = document.createElement("button");
@@ -31,34 +31,41 @@ elForm.addEventListener("submit", function(evt){
         newText.classList.add("item-text");
         newBtn.classList.add("btn-remove");
         newBtnEdit.classList.add("btn-remove");
-        newInput.classList.add("item-check");
+        newInputChec.classList.add("item-check");
         
         newText.textContent = value.name;
-
+        
         newLabel.for = "chec";
-
-        newInput.id = "chec";
-        newInput.name = "user_check";
-        newInput.type = "checkbox";
+        
+        newInputChec.id = "chec";
+        newInputChec.name = "user_check";
+        newInputChec.type = "checkbox";
         
         newBtn.textContent = "Remove";
         newBtn.type = "button";
-
+        
         newBtnEdit.textContent = "Edit";
         newBtnEdit.type = "button";
         
         newBox.appendChild(newLabel);
-        newBox.appendChild(newInput);
+        newBox.appendChild(newInputChec);
         newBox.appendChild(newText);
         newBox.appendChild(newBtnEdit);
         newBox.appendChild(newBtn);
-
+        
         newItem.appendChild(newBox);
         
         elList.appendChild(newItem);
         
+        newInputChec.addEventListener("click", function(){
+            newItem.style.opacity = 0.6;
+            newBtn.disabled = true;
+            newBtnEdit.disabled = true;
+            newText.style.textDecoration = "line-through";
+        });
+        
         newBtn.addEventListener('click', () => {
             newItem.style.display = "none"
-        })
+        });
     });
 });
