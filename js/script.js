@@ -6,7 +6,6 @@ const elAllText = document.querySelector(".all");
 const elComleted = document.querySelector(".completed");
 const elUnText = document.querySelector(".uncompled");
 
-const todos = [];
 let initialId = 0;
 
 const renderArray = function (array, wrapper) {
@@ -65,6 +64,10 @@ const renderArray = function (array, wrapper) {
     });
 };
 
+const localTodos = JSON.parse(window.localStorage.getItem("todos"));
+const todos = localTodos || [];
+renderArray(todos , list)
+
 const formTypes = {
     SAVE: "save",
     EDIT: "edit",
@@ -84,6 +87,7 @@ form.addEventListener("submit", function (evt) {
         });
         renderArray(todos, list); 
         form.reset();
+        window.localStorage.setItem("todos", JSON.stringify(todos));
     };
     
     if (formType === formTypes.EDIT) {
@@ -96,6 +100,7 @@ form.addEventListener("submit", function (evt) {
             return todo.id === obj.id; 
         });
         todos.splice(editingFoundIndex, 1, obj);
+        window.localStorage.setItem("todos", JSON.stringify(todos))
         renderArray(todos, list); 
         formType = formTypes.SAVE; 
         formBtn.textContent = "Add";
@@ -110,6 +115,7 @@ list.addEventListener("click", function (evt) {
             return element.id === deletedTodoid;
         });
         todos.splice(foundIndexTodo, 1); 
+        window.localStorage.setItem("todos", JSON.stringify(todos))
         renderArray(todos, list);
     }
     
@@ -130,6 +136,7 @@ list.addEventListener("click", function (evt) {
             return todo.id === inputCheckboxId;
         });
         foundTodoCheckbox.isCompleted = !foundTodoCheckbox.isCompleted; 
+        window.localStorage.setItem("todos", JSON.stringify(todos))
         renderArray(todos, list);
     }
 });
